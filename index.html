@@ -1,425 +1,432 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programa Talento Técnico Hydro | Atualização de Cadastro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Talento Técnico Hydro | Atualização de Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
 
-https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
 
-<style>
+        .hero {
+            background: linear-gradient(135deg, #005AA7, #0099E5);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
 
-body{
-    background:#f5f7fa;
-    color:#333;
-}
+        .hero p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
 
-.hero{
-    background:linear-gradient(135deg,#005AA7,#0099E5);
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-}
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #FFB600;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: .3s;
+        }
 
-.hero h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
+        .btn:hover {
+            background: #ffd25d;
+        }
 
-.hero p{
-    max-width:800px;
-    margin:auto;
-    font-size:1.2rem;
-    line-height:1.6;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:#FFB600;
-    color:#333;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    transition:.3s;
-}
+        .section {
+            padding: 70px 0;
+        }
 
-.btn:hover{
-    background:#ffd25d;
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #005AA7;
+        }
 
-.section{
-    padding:70px 0;
-}
+        .section-title p {
+            color: #666;
+            margin-top: 10px;
+        }
 
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-.section-title h2{
-    font-size:2.2rem;
-    color:#005AA7;
-}
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+        }
 
-.section-title p{
-    color:#666;
-    margin-top:10px;
-}
+        .card-number {
+            width: 50px;
+            height: 50px;
+            background: #005AA7;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
 
-.steps{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+        .card h3 {
+            margin-bottom: 15px;
+        }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
 
-.card-number{
-    width:50px;
-    height:50px;
-    background:#005AA7;
-    color:white;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.3rem;
-    font-weight:bold;
-    margin-bottom:20px;
-}
+        .checklist {
+            background: #fff;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+        }
 
-.card h3{
-    margin-bottom:15px;
-}
+        .checklist ul {
+            list-style: none;
+        }
 
-.card p{
-    color:#666;
-    line-height:1.6;
-}
+        .checklist li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05rem;
+        }
 
-.checklist{
-    background:#fff;
-    border-radius:15px;
-    padding:35px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
+        .checklist li:last-child {
+            border: none;
+        }
 
-.checklist ul{
-    list-style:none;
-}
+        .faq {
+            display: grid;
+            gap: 20px;
+        }
 
-.checklist li{
-    padding:12px 0;
-    border-bottom:1px solid #eee;
-    font-size:1.05rem;
-}
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .06);
+        }
 
-.checklist li:last-child{
-    border:none;
-}
+        .faq-item h4 {
+            margin-bottom: 10px;
+            color: #005AA7;
+        }
 
-.faq{
-    display:grid;
-    gap:20px;
-}
+        .support {
+            background: #005AA7;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
 
-.faq-item{
-    background:white;
-    border-radius:12px;
-    padding:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,.06);
-}
+        .support h2 {
+            margin-bottom: 20px;
+        }
 
-.faq-item h4{
-    margin-bottom:10px;
-    color:#005AA7;
-}
+        .support-buttons {
+            margin-top: 30px;
+        }
 
-.support{
-    background:#005AA7;
-    color:white;
-    text-align:center;
-    padding:70px 20px;
-}
+        .support-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.support h2{
-    margin-bottom:20px;
-}
+        .whatsapp {
+            background: #25D366;
+            color: white;
+        }
 
-.support-buttons{
-    margin-top:30px;
-}
+        .email {
+            background: white;
+            color: #005AA7;
+        }
 
-.support-buttons a{
-    display:inline-block;
-    margin:10px;
-    padding:15px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
+        .footer {
+            background: #003b70;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
 
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
+        .progress {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+        }
 
-.email{
-    background:white;
-    color:#005AA7;
-}
+        .progress div {
+            background: white;
+            color: #005AA7;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
 
-.footer{
-    background:#003b70;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
+        @media(max-width:768px) {
 
-.progress{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:40px;
-}
+            .hero h1 {
+                font-size: 2rem;
+            }
 
-.progress div{
-    background:white;
-    color:#005AA7;
-    padding:10px 15px;
-    border-radius:30px;
-    font-weight:600;
-}
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
 
-@media(max-width:768px){
-
-.hero h1{
-    font-size:2rem;
-}
-
-.section-title h2{
-    font-size:1.8rem;
-}
-
-}
-
-</style>
+        }
+    </style>
 </head>
+
 <body>
 
-<section class="hero">
+    <section class="hero">
 
-<h1>Programa Talento Técnico Hydro</h1>
+        <h1>Programa Talento Técnico Hydro</h1>
 
-<p>
-Atualize seu cadastro para continuar participando do processo seletivo.
-O procedimento leva aproximadamente 10 minutos.
-</p>
+        <p>
+            Atualize seu cadastro para continuar participando do processo seletivo.
+            O procedimento leva aproximadamente 10 minutos.
+        </p>
 
-<a href="#" class="btn">
-ATUALIZAR CADASTRO
-</a>
+        <a href="#" class="btn">
+            ATUALIZAR CADASTRO
+        </a>
 
-<div class="progress">
-<div>1. Acesso</div>
-<div>2. Dados</div>
-<div>3. Endereço</div>
-<div>4. Experiências</div>
-<div>5. Formação</div>
-<div>6. Finalização</div>
-</div>
+        <div class="progress">
+            <div>1. Acesso</div>
+            <div>2. Dados</div>
+            <div>3. Endereço</div>
+            <div>4. Experiências</div>
+            <div>5. Formação</div>
+            <div>6. Finalização</div>
+        </div>
 
-</section>
+    </section>
 
-<section class="section">
+    <section class="section">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-title">
-<h2>Como funciona?</h2>
-<p>Siga os passos abaixo para concluir sua atualização cadastral.</p>
-</div>
+            <div class="section-title">
+                <h2>Como funciona?</h2>
+                <p>Siga os passos abaixo para concluir sua atualização cadastral.</p>
+            </div>
 
-<div class="steps">
+            <div class="steps">
 
-<div class="card">
-<div class="card-number">1</div>
-<h3>Acesse sua conta</h3>
-<p>
-Entre na plataforma utilizando seu login e senha.
-Caso necessário, utilize a opção "Esqueci minha senha".
-</p>
-</div>
+                <div class="card">
+                    <div class="card-number">1</div>
+                    <h3>Acesse sua conta</h3>
+                    <p>
+                        Entre na plataforma utilizando seu login e senha.
+                        Caso necessário, utilize a opção "Esqueci minha senha".
+                    </p>
+                </div>
 
-<div class="card">
-<div class="card-number">2</div>
-<h3>Atualize seus dados</h3>
-<p>
-Revise nome, CPF, telefone, e-mail e demais informações pessoais.
-</p>
-</div>
+                <div class="card">
+                    <div class="card-number">2</div>
+                    <h3>Atualize seus dados</h3>
+                    <p>
+                        Revise nome, CPF, telefone, e-mail e demais informações pessoais.
+                    </p>
+                </div>
 
-<div class="card">
-<div class="card-number">3</div>
-<h3>Confirme seu endereço</h3>
-<p>
-Mantenha CEP, cidade e endereço atualizados.
-</p>
-</div>
+                <div class="card">
+                    <div class="card-number">3</div>
+                    <h3>Confirme seu endereço</h3>
+                    <p>
+                        Mantenha CEP, cidade e endereço atualizados.
+                    </p>
+                </div>
 
-<div class="card">
-<div class="card-number">4</div>
-<h3>Informe experiências</h3>
-<p>
-Cadastre experiências profissionais, projetos, estágios ou atividades voluntárias.
-</p>
-</div>
+                <div class="card">
+                    <div class="card-number">4</div>
+                    <h3>Informe experiências</h3>
+                    <p>
+                        Cadastre experiências profissionais, projetos, estágios ou atividades voluntárias.
+                    </p>
+                </div>
 
-<div class="card">
-<div class="card-number">5</div>
-<h3>Atualize sua formação</h3>
-<p>
-Preencha corretamente sua instituição, curso e previsão de conclusão.
-</p>
-</div>
+                <div class="card">
+                    <div class="card-number">5</div>
+                    <h3>Atualize sua formação</h3>
+                    <p>
+                        Preencha corretamente sua instituição, curso e previsão de conclusão.
+                    </p>
+                </div>
 
-<div class="card">
-<div class="card-number">6</div>
-<h3>Finalize</h3>
-<p>
-Revise todas as informações e clique em Finalizar Cadastro.
-</p>
-</div>
+                <div class="card">
+                    <div class="card-number">6</div>
+                    <h3>Finalize</h3>
+                    <p>
+                        Revise todas as informações e clique em Finalizar Cadastro.
+                    </p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<section class="section">
+    <section class="section">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-title">
-<h2>Checklist de Conferência</h2>
-<p>Antes de concluir, certifique-se de que tudo está correto.</p>
-</div>
+            <div class="section-title">
+                <h2>Checklist de Conferência</h2>
+                <p>Antes de concluir, certifique-se de que tudo está correto.</p>
+            </div>
 
-<div class="checklist">
+            <div class="checklist">
 
-<ul>
-<li>✅ Dados pessoais atualizados</li>
-<li>✅ Telefone válido</li>
-<li>✅ E-mail atualizado</li>
-<li>✅ Endereço revisado</li>
-<li>✅ Formação cadastrada</li>
-<li>✅ Experiências registradas</li>
-<li>✅ Informações conferidas</li>
-</ul>
+                <ul>
+                    <li>✅ Dados pessoais atualizados</li>
+                    <li>✅ Telefone válido</li>
+                    <li>✅ E-mail atualizado</li>
+                    <li>✅ Endereço revisado</li>
+                    <li>✅ Formação cadastrada</li>
+                    <li>✅ Experiências registradas</li>
+                    <li>✅ Informações conferidas</li>
+                </ul>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<section class="section">
+    <section class="section">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-title">
-<h2>Dúvidas Frequentes</h2>
-</div>
+            <div class="section-title">
+                <h2>Dúvidas Frequentes</h2>
+            </div>
 
-<div class="faq">
+            <div class="faq">
 
-<div class="faq-item">
-<h4>Esqueci minha senha</h4>
-<p>
-Utilize a opção "Esqueci minha senha" na página de login.
-</p>
-</div>
+                <div class="faq-item">
+                    <h4>Esqueci minha senha</h4>
+                    <p>
+                        Utilize a opção "Esqueci minha senha" na página de login.
+                    </p>
+                </div>
 
-<div class="faq-item">
-<h4>Não tenho experiência profissional</h4>
-<p>
-Você pode incluir projetos acadêmicos, atividades voluntárias ou experiências práticas.
-</p>
-</div>
+                <div class="faq-item">
+                    <h4>Não tenho experiência profissional</h4>
+                    <p>
+                        Você pode incluir projetos acadêmicos, atividades voluntárias ou experiências práticas.
+                    </p>
+                </div>
 
-<div class="faq-item">
-<h4>Posso atualizar depois?</h4>
-<p>
-Recomendamos concluir o preenchimento completo durante o acesso.
-</p>
-</div>
+                <div class="faq-item">
+                    <h4>Posso atualizar depois?</h4>
+                    <p>
+                        Recomendamos concluir o preenchimento completo durante o acesso.
+                    </p>
+                </div>
 
-<div class="faq-item">
-<h4>Quanto tempo leva?</h4>
-<p>
-Em média, entre 10 e 15 minutos.
-</p>
-</div>
+                <div class="faq-item">
+                    <h4>Quanto tempo leva?</h4>
+                    <p>
+                        Em média, entre 10 e 15 minutos.
+                    </p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<section class="support">
+    <section class="support">
 
-<h2>Precisa de ajuda?</h2>
+        <h2>Precisa de ajuda?</h2>
 
-<p>
-Nossa equipe está disponível para apoiar você durante a atualização.
-</p>
+        <p>
+            Nossa equipe está disponível para apoiar você durante a atualização.
+        </p>
 
-<div class="support-buttons">
+        <div class="support-buttons">
 
-https://wa.me/5591999999999
-WhatsApp
-</a>
+            https://wa.me/5591999999999
+            WhatsApp
+            </a>
 
-processoseletivo@empresa.com.br
-Enviar E-mail
-</a>
+            processoseletivo@empresa.com.br
+            Enviar E-mail
+            </a>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<footer class="footer">
+    <footer class="footer">
 
-<h3>Cadastro concluído ✅</h3>
+        <h3>Cadastro concluído ✅</h3>
 
-<p>
-Após finalizar, seu perfil estará atualizado para participação nas próximas etapas do processo seletivo.
-</p>
+        <p>
+            Após finalizar, seu perfil estará atualizado para participação nas próximas etapas do processo seletivo.
+        </p>
 
-</footer>
+    </footer>
 
 </body>
+
 </html>
