@@ -183,6 +183,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: .3s;
         }
 
         .whatsapp {
@@ -190,9 +191,17 @@
             color: white;
         }
 
+        .whatsapp:hover {
+            background: #20ba5a;
+        }
+
         .email {
             background: white;
             color: #005AA7;
+        }
+
+        .email:hover {
+            background: #eef5fb;
         }
 
         .footer {
@@ -226,6 +235,13 @@
 
             .section-title h2 {
                 font-size: 1.8rem;
+            }
+
+            .support-buttons a {
+                display: block;
+                margin: 10px auto;
+                max-width: 100%;
+                word-break: break-all;
             }
 
         }
@@ -405,12 +421,12 @@
 
         <div class="support-buttons">
 
-            https://wa.me/5591999999999
-            WhatsApp
+            <a href="https://wa.me/5591991449757" target="_blank" rel="noopener noreferrer" class="whatsapp">
+                📱 WhatsApp: (91) 99144-9757
             </a>
 
-            processoseletivo@empresa.com.br
-            Enviar E-mail
+            <a href="mailto:talentotecnicohydro@gestorconsultoria.com.br" class="email">
+                📧 talentotecnicohydro@gestorconsultoria.com.br
             </a>
 
         </div>
