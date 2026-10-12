@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa Talento Técnico Hydro | Atualização de Cadastro</title>
+
+https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+.hero{
+    background:linear-gradient(135deg,#005AA7,#0099E5);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:1.2rem;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    background:#FFB600;
+    color:#333;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ffd25d;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    padding:70px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.2rem;
+    color:#005AA7;
+}
+
+.section-title p{
+    color:#666;
+    margin-top:10px;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card-number{
+    width:50px;
+    height:50px;
+    background:#005AA7;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.6;
+}
+
+.checklist{
+    background:#fff;
+    border-radius:15px;
+    padding:35px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.checklist ul{
+    list-style:none;
+}
+
+.checklist li{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+    font-size:1.05rem;
+}
+
+.checklist li:last-child{
+    border:none;
+}
+
+.faq{
+    display:grid;
+    gap:20px;
+}
+
+.faq-item{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.faq-item h4{
+    margin-bottom:10px;
+    color:#005AA7;
+}
+
+.support{
+    background:#005AA7;
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.support h2{
+    margin-bottom:20px;
+}
+
+.support-buttons{
+    margin-top:30px;
+}
+
+.support-buttons a{
+    display:inline-block;
+    margin:10px;
+    padding:15px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+.email{
+    background:white;
+    color:#005AA7;
+}
+
+.footer{
+    background:#003b70;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.progress{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:40px;
+}
+
+.progress div{
+    background:white;
+    color:#005AA7;
+    padding:10px 15px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2rem;
+}
+
+.section-title h2{
+    font-size:1.8rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<h1>Programa Talento Técnico Hydro</h1>
+
+<p>
+Atualize seu cadastro para continuar participando do processo seletivo.
+O procedimento leva aproximadamente 10 minutos.
+</p>
+
+<a href="#" class="btn">
+ATUALIZAR CADASTRO
+</a>
+
+<div class="progress">
+<div>1. Acesso</div>
+<div>2. Dados</div>
+<div>3. Endereço</div>
+<div>4. Experiências</div>
+<div>5. Formação</div>
+<div>6. Finalização</div>
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Como funciona?</h2>
+<p>Siga os passos abaixo para concluir sua atualização cadastral.</p>
+</div>
+
+<div class="steps">
+
+<div class="card">
+<div class="card-number">1</div>
+<h3>Acesse sua conta</h3>
+<p>
+Entre na plataforma utilizando seu login e senha.
+Caso necessário, utilize a opção "Esqueci minha senha".
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">2</div>
+<h3>Atualize seus dados</h3>
+<p>
+Revise nome, CPF, telefone, e-mail e demais informações pessoais.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">3</div>
+<h3>Confirme seu endereço</h3>
+<p>
+Mantenha CEP, cidade e endereço atualizados.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">4</div>
+<h3>Informe experiências</h3>
+<p>
+Cadastre experiências profissionais, projetos, estágios ou atividades voluntárias.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">5</div>
+<h3>Atualize sua formação</h3>
+<p>
+Preencha corretamente sua instituição, curso e previsão de conclusão.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">6</div>
+<h3>Finalize</h3>
+<p>
+Revise todas as informações e clique em Finalizar Cadastro.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Checklist de Conferência</h2>
+<p>Antes de concluir, certifique-se de que tudo está correto.</p>
+</div>
+
+<div class="checklist">
+
+<ul>
+<li>✅ Dados pessoais atualizados</li>
+<li>✅ Telefone válido</li>
+<li>✅ E-mail atualizado</li>
+<li>✅ Endereço revisado</li>
+<li>✅ Formação cadastrada</li>
+<li>✅ Experiências registradas</li>
+<li>✅ Informações conferidas</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Dúvidas Frequentes</h2>
+</div>
+
+<div class="faq">
+
+<div class="faq-item">
+<h4>Esqueci minha senha</h4>
+<p>
+Utilize a opção "Esqueci minha senha" na página de login.
+</p>
+</div>
+
+<div class="faq-item">
+<h4>Não tenho experiência profissional</h4>
+<p>
+Você pode incluir projetos acadêmicos, atividades voluntárias ou experiências práticas.
+</p>
+</div>
+
+<div class="faq-item">
+<h4>Posso atualizar depois?</h4>
+<p>
+Recomendamos concluir o preenchimento completo durante o acesso.
+</p>
+</div>
+
+<div class="faq-item">
+<h4>Quanto tempo leva?</h4>
+<p>
+Em média, entre 10 e 15 minutos.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="support">
+
+<h2>Precisa de ajuda?</h2>
+
+<p>
+Nossa equipe está disponível para apoiar você durante a atualização.
+</p>
+
+<div class="support-buttons">
+
+https://wa.me/5591999999999
+WhatsApp
+</a>
+
+processoseletivo@empresa.com.br
+Enviar E-mail
+</a>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<h3>Cadastro concluído ✅</h3>
+
+<p>
+Após finalizar, seu perfil estará atualizado para participação nas próximas etapas do processo seletivo.
+</p>
+
+</footer>
+
+</body>
+</html>
