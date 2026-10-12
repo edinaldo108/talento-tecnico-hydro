@@ -128,20 +128,123 @@
             border-radius: 15px;
             padding: 35px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+            max-width: 650px;
+            margin: 0 auto;
         }
 
-        .checklist ul {
+        .checklist-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #edf2f7;
+        }
+
+        .checklist-progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #005AA7;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .checklist-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .checklist-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #005AA7, #28a745);
+            border-radius: 999px;
+            transition: width 0.3s ease;
+        }
+
+        .checklist-list {
             list-style: none;
         }
 
-        .checklist li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            font-size: 1.05rem;
+        .checklist-list li {
+            border-bottom: 1px solid #f1f5f9;
         }
 
-        .checklist li:last-child {
+        .checklist-list li:last-child {
             border: none;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+            user-select: none;
+        }
+
+        .checklist-item:hover {
+            background: #f8fafc;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            outline: none;
+            cursor: pointer;
+            display: grid;
+            place-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            background: #fff;
+        }
+
+        .checklist-item input[type="checkbox"]:hover {
+            border-color: #005AA7;
+        }
+
+        .checklist-item input[type="checkbox"]:checked {
+            background-color: #28a745;
+            border-color: #28a745;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 14px 14px;
+        }
+
+        .checklist-item .item-text {
+            font-size: 1.05rem;
+            color: #334155;
+            transition: color 0.2s ease;
+        }
+
+        .checklist-item.completed {
+            background: #f0fdf4;
+        }
+
+        .checklist-item.completed .item-text {
+            color: #166534;
+            font-weight: 500;
+        }
+
+        .checklist-congrats {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 15px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .faq {
@@ -346,20 +449,69 @@
 
             <div class="section-title">
                 <h2>Checklist de Conferência</h2>
-                <p>Antes de concluir, certifique-se de que tudo está correto.</p>
+                <p>Marque cada etapa conforme for realizando para acompanhar seu progresso.</p>
             </div>
 
             <div class="checklist">
 
-                <ul>
-                    <li>✅ Dados pessoais atualizados</li>
-                    <li>✅ Telefone válido</li>
-                    <li>✅ E-mail atualizado</li>
-                    <li>✅ Endereço revisado</li>
-                    <li>✅ Formação cadastrada</li>
-                    <li>✅ Experiências registradas</li>
-                    <li>✅ Informações conferidas</li>
+                <div class="checklist-header">
+                    <div class="checklist-progress-info">
+                        <span>Progresso da conferência</span>
+                        <span><strong id="checklist-count">0</strong> de 7 etapas</span>
+                    </div>
+                    <div class="checklist-progress-bar">
+                        <div class="checklist-progress-fill" id="checklist-progress-fill"></div>
+                    </div>
+                </div>
+
+                <ul class="checklist-list">
+                    <li>
+                        <label class="checklist-item">
+                            <input type="checkbox" data-id="item-1">
+                            <span class="item-text">Dados pessoais atualizados</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checklist-item">
+                            <input type="checkbox" data-id="item-2">
+                            <span class="item-text">Telefone válido</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checklist-item">
+                            <input type="checkbox" data-id="item-3">
+                            <span class="item-text">E-mail atualizado</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checklist-item">
+                            <input type="checkbox" data-id="item-4">
+                            <span class="item-text">Endereço revisado</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checklist-item">
+                            <input type="checkbox" data-id="item-5">
+                            <span class="item-text">Formação cadastrada</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checklist-item">
+                            <input type="checkbox" data-id="item-6">
+                            <span class="item-text">Experiências registradas</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checklist-item">
+                            <input type="checkbox" data-id="item-7">
+                            <span class="item-text">Informações conferidas</span>
+                        </label>
+                    </li>
                 </ul>
+
+                <div class="checklist-congrats" id="checklist-congrats">
+                    🎉 Parabéns! Todas as etapas foram conferidas.
+                </div>
 
             </div>
 
@@ -442,6 +594,70 @@
         </p>
 
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            const progressFill = document.getElementById('checklist-progress-fill');
+            const progressCount = document.getElementById('checklist-count');
+            const congratsMsg = document.getElementById('checklist-congrats');
+            const total = checkboxes.length;
+
+            function getSaved(key) {
+                try {
+                    return localStorage.getItem(key);
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function setSaved(key, value) {
+                try {
+                    localStorage.setItem(key, value);
+                } catch (e) {}
+            }
+
+            function updateProgress() {
+                let checkedCount = 0;
+                checkboxes.forEach(function (cb) {
+                    const item = cb.closest('.checklist-item');
+                    if (cb.checked) {
+                        checkedCount++;
+                        item.classList.add('completed');
+                    } else {
+                        item.classList.remove('completed');
+                    }
+                });
+
+                if (progressCount) {
+                    progressCount.textContent = checkedCount;
+                }
+
+                if (progressFill) {
+                    const percent = total > 0 ? (checkedCount / total) * 100 : 0;
+                    progressFill.style.width = percent + '%';
+                }
+
+                if (congratsMsg) {
+                    congratsMsg.style.display = (checkedCount === total && total > 0) ? 'block' : 'none';
+                }
+            }
+
+            checkboxes.forEach(function (cb) {
+                const id = cb.getAttribute('data-id');
+                if (getSaved('hydro_checklist_' + id) === 'true') {
+                    cb.checked = true;
+                }
+
+                cb.addEventListener('change', function () {
+                    setSaved('hydro_checklist_' + id, cb.checked);
+                    updateProgress();
+                });
+            });
+
+            updateProgress();
+        });
+    </script>
 
 </body>
 
