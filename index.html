@@ -133,6 +133,44 @@
             font-weight: 600;
         }
 
+        .card-image-container {
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-image-container a {
+            display: block;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .card-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .card-image-container a:hover img {
+            transform: scale(1.02);
+        }
+
+        .card-image-caption {
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            color: #005AA7;
+            background: #f0f7ff;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
         .checklist {
             background: #fff;
             border-radius: 15px;
@@ -405,6 +443,14 @@
                         Entre na plataforma utilizando seu login e senha.
                         Caso necessário, utilize a opção "Esqueci minha senha" para recuperar o acesso.
                     </p>
+                    <div class="card-image-container">
+                        <a href="imagens/etapa1.png" target="_blank" rel="noopener noreferrer" title="Clique para ampliar a imagem de referência">
+                            <img src="imagens/etapa1.png" alt="Referência da Etapa 1 - Tela de login do Comtalento" loading="lazy">
+                        </a>
+                        <div class="card-image-caption">
+                            🔍 <span>Referência visual: Tela de login (clique para ampliar)</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card">
